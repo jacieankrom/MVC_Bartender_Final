@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC_Bartender.Migrations
 {
     [DbContext(typeof(BarDbContext))]
-    [Migration("20210901073253_addCocktailToDatabase")]
-    partial class addCocktailToDatabase
+    [Migration("20210902011327_AddCocktailToDataBase")]
+    partial class AddCocktailToDataBase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,9 @@ namespace MVC_Bartender.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Drink_Img_Link")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -39,6 +42,24 @@ namespace MVC_Bartender.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cocktail");
+                });
+
+            modelBuilder.Entity("MVC_Bartender.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("OrderNum")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Ready")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Order");
                 });
 #pragma warning restore 612, 618
         }

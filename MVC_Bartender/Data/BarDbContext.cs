@@ -15,5 +15,7 @@ namespace MVC_Bartender.Data
         }
 
         public DbSet<Cocktail> Cocktail { get; set; }
+
+        public DbSet<MVC_Bartender.Models.Order> Order { get; set; }
     }
 }

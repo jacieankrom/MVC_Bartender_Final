@@ -11,6 +11,7 @@ namespace MVC_Bartender.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public int Price { get; set; }
-        
+        public string Drink_Img_Link { get; set; }
+
     }
 }
