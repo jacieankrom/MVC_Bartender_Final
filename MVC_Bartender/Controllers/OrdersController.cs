@@ -52,7 +52,7 @@ namespace MVC_Bartender.Controllers
         // POST: Orders/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,OrderNum,Ready")] Order order)
+        public async Task<IActionResult> Create([Bind("Id,OrderNum,Ready,Name")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace MVC_Bartender.Controllers
         // POST: Orders/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,OrderNum,Ready")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,OrderNum,Ready,Name")] Order order)
         {
             if (id != order.Id)
             {

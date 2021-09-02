@@ -11,5 +11,6 @@ namespace MVC_Bartender.Models
         public int Id { get; set; }
         public int OrderNum { get; set; }
         public Boolean Ready { get; set; }
+        public string Name { get; set; }
     }
 }
