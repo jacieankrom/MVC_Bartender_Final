@@ -46,6 +46,7 @@ namespace MVC_Bartender.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
+            ViewBag.Id = new SelectList(_context.Cocktail, "Id", "Name");
             return View();
         }
 
@@ -60,6 +61,7 @@ namespace MVC_Bartender.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.Id = new SelectList(_context.Cocktail, "Id", "Name", order.Id);
             return View(order);
         }
 
@@ -76,6 +78,7 @@ namespace MVC_Bartender.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Id = new SelectList(_context.Cocktail, "Id", "Name", order.Id);
             return View(order);
         }
 
@@ -109,6 +112,7 @@ namespace MVC_Bartender.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.Id = new SelectList(_context.Cocktail, "Id", "Name", order.Id);
             return View(order);
         }
 

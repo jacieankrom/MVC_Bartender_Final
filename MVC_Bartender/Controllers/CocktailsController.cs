@@ -145,5 +145,7 @@ namespace MVC_Bartender.Controllers
         {
             return _context.Cocktail.Any(e => e.Id == id);
         }
+
+
     }
 }
